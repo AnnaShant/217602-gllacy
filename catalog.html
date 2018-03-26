@@ -95,7 +95,7 @@
         </header>
 
         <main class="main-box">
-          <div class="main-box__contacts">
+          <div class="main-box__contacts main-box__contacts--catalog">
             <p class="main-box__contacts-text">с 10 до 20, ежедневно<br>
             <span class="main-box__contacts-tel">8 812 450-25-25</span></p>
           </div>
@@ -116,42 +116,88 @@
 
           <h1 class="main-box__title">Сливочное мороженное</h1>
 
-          <div class="choice-ice-cream">
             <form class="choice-ice-cream__form" method="get" action="#">
-              <fieldset class="choice-ice-cream__sorting choice-ice-cream__wrap ">
+              <fieldset class="choice-ice-cream__sorting choice-ice-cream__wrap">
                 <legend class="choice-ice-cream__title">Сортировка:</legend>
-                <select name="" id="">
-                  <option value="">по популярности</option>
-                  <option value="">сначала недорогие</option>
-                  <option value="">сначала дорогие</option>
-                  <option value="">по жирности</option>
-                </select>
+                <div class="choice-ice-cream__sorting-wrap">
+                  <select name="choice-ice-cream__sorting">
+                    <option value="popularity">по популярности</option>
+                    <option value="inexpensive">сначала недорогие</option>
+                    <option value="expensive">сначала дорогие</option>
+                    <option value="fat">по жирности</option>
+                  </select>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 9 5"><path fill="#FFF" d="M4.5 5L0 0h9z"/></svg>
+                </div>
               </fieldset>
 
               <fieldset class="choice-ice-cream__price choice-ice-cream__wrap">
                 <legend class="choice-ice-cream__title">Цена 100 руб. - 500 руб.</legend>
+                <div class="choice-ice-cream__price-range">
+                  <div class="choice-ice-cream__price-range-bar"></div>
+                  <div class="choice-ice-cream__price-range-toggle choice-ice-cream__price-range-toggle--min"></div>
+                  <div class="choice-ice-cream__price-range-toggle choice-ice-cream__price-range-toggle--max"></div>
+                </div>
               </fieldset>
 
               <fieldset class="choice-ice-cream__fat choice-ice-cream__wrap">
                 <legend class="choice-ice-cream__title">Жирность:</legend>
-                <input type="radio"><label>0%</label>
-                <input type="radio"><label>до 10%</label>
-                <input type="radio"><label>до 30%</label>
-                <input type="radio"><label>выше 30%</label>
+                <div class="choice-ice-cream__fat-wrap">
+                  <label class="login-checkbox">
+                    <input class="visually-hidden" type="radio" name="fat">
+                    <span class="checkbox-indicator"></span>
+                    0%
+                  </label>
+                  <label class="login-checkbox">
+                    <input class="visually-hidden" type="radio" name="fat">
+                    <span class="checkbox-indicator"></span>
+                    до 10%
+                  </label>
+                  <label class="login-checkbox">
+                    <input class="visually-hidden" type="radio" name="fat">
+                    <span class="checkbox-indicator"></span>
+                    до 30%
+                  </label>
+                  <label class="login-checkbox">
+                    <input class="visually-hidden" type="radio" name="fat">
+                    <span class="checkbox-indicator"></span>
+                    выше 30%
+                  </label>
+                </div>
               </fieldset>
 
               <fieldset class="choice-ice-cream__fillers choice-ice-cream__wrap">
                 <legend class="choice-ice-cream__title">Наполнители:</legend>
-                <input type="checkbox"><label>шоколадные</label>
-                <input type="checkbox"><label>сахарные присыпки</label>
-                <input type="checkbox"><label>фрукты</label>
-                <input type="checkbox"><label>сиропы</label>
-                <input type="checkbox"><label>джемы</label>
+                <div class="choice-ice-cream__fillers-wrap">
+                  <label class="login-checkbox">
+                    <input class="visually-hidden" type="checkbox" name="chocolate">
+                    <span class="checkbox-indicator"></span>
+                    шоколадные
+                  </label>
+                  <label class="login-checkbox">
+                    <input class="visually-hidden" type="checkbox" name="powder" disabled>
+                    <span class="checkbox-indicator"></span>
+                    сахарные присыпки
+                  </label>
+                  <label class="login-checkbox">
+                    <input class="visually-hidden" type="checkbox" name="fruit">
+                    <span class="checkbox-indicator"></span>
+                    фрукты
+                  </label>
+                  <label class="login-checkbox">
+                    <input class="visually-hidden" type="checkbox" name="syrups">
+                    <span class="checkbox-indicator"></span>
+                    сиропы
+                  </label>
+                  <label class="login-checkbox">
+                    <input class="visually-hidden" type="checkbox" name="jams">
+                    <span class="checkbox-indicator"></span>
+                    джемы
+                  </label>
+                </div>
               </fieldset>
+
+              <button class="choice-ice-cream__btn" type="submit">Применить</button>
             </form>
-            
-            <button class="choice-ice-cream__btn" type="submit">Применить</button>
-          </div>
 
           <div class="hit">
             <article class="hit__box">

@@ -289,6 +289,10 @@ fieldset {
   right: 0;
 }
 
+.main-box__contacts--catalog {
+  top: -35px;
+}
+
 .main-box__contacts-text {
   font-size: 14px;
   line-height: 18px;
@@ -672,41 +676,274 @@ fieldset {
 }
 
 /*Каталог*/
+.main-box__title {
+  margin: 0;
+  padding: 0;
+
+  margin-top: 2px;
+  margin-bottom: 25px;
+
+  font-size: 35px;
+  line-height: 41px;
+}
+
 .breadcrumbs {
-  width: 267px;
-  margin-top: 25px;
+  width: 220px;
+  margin-top: 15px;
 }
 
 .breadcrumbs__items {
-  display: flex; 
-}
-
-.choice-ice-cream {
   display: flex;
-  
 
-  width: 860px;
-  margin-bottom: 40px;
+  margin: 0;
+  padding: 0;
 }
 
-.choice-ice-cream__sorting {
-  widows: 190px;
+.breadcrumbs__item {
+  margin-right: 20px;
+}
+
+.breadcrumbs__link {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+/*Фильтр*/
+.choice-ice-cream__form {
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 1146px;
+  margin-left: -15px;
+  margin-bottom: 30px;
+
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 500;
+}
+
+.choice-ice-cream__title {
+  margin-left: 17px;
+
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.choice-ice-cream__sorting-wrap {
+  position: relative;
+
+  border-radius: 20px;
+}
+
+.choice-ice-cream__sorting-wrap svg {
+  position: absolute;
+
+  top: 13px;
+  right: 14px;
+}
+
+.choice-ice-cream__sorting select {
+  width: 193px;
+  padding: 10px 14px;
+
+  color: #ffffff;
+
+  background-color: rgba(255, 255, 255, 0.2);
+
+  border: none;
+  border-radius: 20px;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.choice-ice-cream__sorting option {
+  color: #000000;
 }
 
 .choice-ice-cream__price {
-  width: 220px;
+  margin-left: -10px;
+}
+
+.choice-ice-cream__price-range {
+  position: relative;
+
+  width: 178px;
+  padding: 16px 21px;
+
+  background-color: rgba(255, 255, 255, 0.2);
+
+  border-radius: 20px;
+}
+
+.choice-ice-cream__price-range::before {
+  content: "";
+
+  position: absolute;
+  left: 44px;
+
+  width: 98px;
+  height: 4px;
+
+  background-color: #ffffff;
+}
+
+.choice-ice-cream__price-range-bar {
+  width: 176px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.choice-ice-cream__price-range-toggle {
+  position: absolute;
+  top: 8px;
+  left: 34px;
+
+  width: 4px;
+  height: 4px;
+
+  background-color: #ababab;
+
+  border: 8px solid #ffffff;
+  border-radius: 50%;
+}
+
+.choice-ice-cream__price-range-toggle--max {
+  left: 132px;
 }
 
 .choice-ice-cream__fat {
-  width: 415px;
+  margin-left: -10px;
+}
+
+.choice-ice-cream__fat label {
+  margin-right: 15px;
+  padding-left: 30px;
+}
+
+.choice-ice-cream__fat-wrap {
+  margin: 0;
+  padding: 0;
+
+  width: 386px;
+  padding: 10px 14px;
+
+  background-color: rgba(255, 255, 255, 0.2);
+
+  border-radius: 20px;
+}
+
+.choice-ice-cream__fat label:last-child {
+  margin-right: 0;
 }
 
 .choice-ice-cream__fillers {
-  width: 702px;
+  margin-top: 5px;
+}
+
+.choice-ice-cream__fillers label {
+  margin-right: 18px;
+  padding-left: 31px;
+}
+
+.choice-ice-cream__fillers-wrap {
+  margin: 0;
+  padding: 0;
+
+  width: 670px;
+  padding: 10px 16px;
+
+  background-color: rgba(255, 255, 255, 0.2);
+
+  border-radius: 20px;
+}
+
+.choice-ice-cream__fillers label:last-child {
+  margin-right: 0;
+}
+
+.login-checkbox {
+  position: relative;
+
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.checkbox-indicator {
+  text-align: top;
+}
+
+.login-checkbox:hover,
+.login-checkbox:focus {
+  opacity: 1;
+}
+
+.login-checkbox input[type="radio"] + .checkbox-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 22px;
+  height: 22px;
+
+  background-image: url("../img/svg/radio-off.svg");
+}
+
+.login-checkbox input[type="radio"]:checked + .checkbox-indicator::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 22px;
+  height: 22px;
+  
+  background-image: url("../img/svg/radio-on.svg");
+}
+
+.login-checkbox input[type="checkbox"] + .checkbox-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 20px;
+  height: 20px;
+
+  background-image: url("../img/svg/checkbox-off.svg");
+}
+
+.login-checkbox input[type="checkbox"]:checked + .checkbox-indicator::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 24px;
+  height: 20px;
+  
+  background-image: url("../img/svg/checkbox-on.svg");
+}
+
+.login-checkbox input[type="checkbox"]:disabled + .checkbox-indicator {
+  opacity: 0.4;
 }
 
 .choice-ice-cream__btn {
-  width: 144px;
+  align-self: center;
+
+  margin-top: 18px;
+  padding: 7px 28px;
+
+  color: #ffffff;
+
+  background-color: rgba(255, 255, 255, 0.2);
+
+  border: 2px solid #ffffff;
+  border-radius: 20px;
 }
 
 /*Футер*/
