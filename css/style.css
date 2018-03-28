@@ -117,6 +117,7 @@ ul {
 .header-wrap {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   padding-top: 9px;
 }
@@ -140,10 +141,6 @@ ul {
 }
 
 .header-search {
-  margin-left: 5px;
-}
-
-.header-search__wrap {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,11 +152,22 @@ ul {
 
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
+
+  cursor: pointer;
 }
 
-.header-search__wrap svg {
+.header-search:hover {
+  background-color: #ffffff;
+}
+
+.header-search svg {
   position: absolute;
   top: 7px;
+  left: 7px;
+}
+
+.header-search:hover svg path {
+  fill: #323232;
 }
 
 .header-search__text {
@@ -178,11 +186,28 @@ ul {
   height: 85px;
   padding: 20px 15px;
 
+  background-color: #ffffff;
+
   border-radius: 5px;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4);
+
+  z-index: 10;
 }
 
-.header-entrance__wrap {
+.header-search:hover .header-search__form {
+  display: block;
+}
+
+.header-search svg::after {
+  content: "";
+    position: absolute;
+    width: 100%;
+    height: 15px;
+    top: 100%;
+    left: 0;
+}
+
+.header-entrance {
   display: flex;
   align-items: center;
 
@@ -206,7 +231,7 @@ ul {
   margin-left: 30px;
 }
 
-.header-entrance__wrap svg {
+.header-entrance svg {
   position: absolute;
   top: 6px;
   left: 18px;
@@ -217,6 +242,7 @@ ul {
   position: absolute;
   right: 0;
   top: 36px;
+  z-index: 10;
 
   box-sizing: border-box;
 
@@ -226,6 +252,10 @@ ul {
 
   border-radius: 5px;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4);
+}
+
+.header-entrance:hover .header-entrance__form {
+  display: block;
 }
 
 .header-basket {
@@ -257,8 +287,8 @@ fieldset {
 
 .main-nav {
   display: flex;
+  flex-wrap: wrap;
 
-  width: 560px;
   margin: 0;
   padding: 0;
 }
@@ -266,17 +296,88 @@ fieldset {
 .main-nav__items {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 
-  width: 349px;
   margin: 0;
   padding: 0;
   margin: 19px 0;
-  margin-left: 23px;
+  margin-top: 18px;
+  margin-left: 10px;
+}
+
+.main-nav__item span {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .main-nav__link {
-  line-height: 18px;
- }
+  padding: 7px 15px;
+
+  border: none;
+}
+
+.main-nav__link:hover,
+.main-nav__link:focus {
+  padding: 7px 15px;
+
+  color: #323232;
+
+  background-color: #ffffff;
+
+  border-radius: 20px;
+  border: none;
+}
+
+.main-nav__item-sub-catalog {
+  position: relative;
+}
+
+.main-nav__item-sub-catalog:hover .sub-menu__items {
+  display: block;
+}
+
+.sub-menu__items {
+  width: 129px;
+
+  margin: 0;
+  padding: 0;
+  padding: 0 7px;
+  padding-top: 10px;
+
+  position: absolute;
+  top: 35px;
+  left: -5px;
+  z-index: 10;
+
+  display: none;
+
+  background-color: #ffffff;
+
+  border-radius: 5px;
+}
+
+.sub-menu__item {
+  padding-left: 14px;
+  margin-bottom: 10px;
+}
+
+.sub-menu__item-new {
+  padding-bottom: 10px;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.sub-menu__link {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #323232;
+
+  border: none;
+}
+
+.sub-menu__link-new {
+  font-weight: 700;
+}
 
 /*Контент*/
 .main-box {
@@ -450,7 +551,7 @@ fieldset {
   position: relative;
 
   width: 267px;
-  margin-bottom: 35px;
+  margin-bottom: 37px;
 }
 
 .hit__img-svg {
@@ -461,7 +562,7 @@ fieldset {
 }
 
 .hit__img {
-  margin-bottom: 10px;
+  margin-bottom: 7px;
 
   border-radius: 50%;
  }
@@ -944,6 +1045,66 @@ fieldset {
 
   border: 2px solid #ffffff;
   border-radius: 20px;
+}
+
+.catalog-pagination {
+  position: relative;
+
+  width: 1146px;
+
+  margin-top: 45px;
+  padding-bottom: 55px;
+
+  border-bottom: 1px solid #ffffff;
+}
+
+.catalog-pagination__items {
+  display: flex;
+  flex-wrap: wrap;
+
+  position: absolute;
+  top: 2px;
+  right: 4px;
+
+  width: 190px;
+
+  padding: 0;
+  margin: 0;
+}
+
+.catalog-pagination__link {
+  font-weight: 500;
+
+  border: none;
+}
+
+.catalog-pagination__item {
+  width: 25px;
+  height: 26px;
+
+  margin-right: 4px;
+}
+
+.catalog-pagination__item-arrows {
+  width: 12px;
+  height: 20px;
+
+  margin-right: -5px;
+
+  background-image: url("../img/svg/icon-right-small.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.catalog-pagination__item-arrows--prev {
+  margin-left: 0;
+  margin-right: 22px;
+
+  transform: rotate(180deg);
+}
+
+.catalog-pagination__link-arrows {
+  font-size: 0; 
 }
 
 /*Футер*/
