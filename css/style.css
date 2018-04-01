@@ -961,9 +961,11 @@ fieldset {
 
 .hit__img-svg {
   position: absolute;
-
   top: 0;
   left: 0;
+
+  background-color: #ffffff;
+  border-radius: 50%;
 }
 
 .hit__img {
@@ -1027,6 +1029,7 @@ fieldset {
   color: #323232;
 
   background-image: url("../img/waffle-background.jpg");
+  background-color: #eae0c8;
   background-size: 100%;
   background-repeat: no-repeat;
 
@@ -1174,21 +1177,28 @@ fieldset {
   left: -27px;
 }
 
-.map iframe {
+.map__wrap {
+  position: relative;
+  z-index: 4;
+
+  height: 430px;
+  width: 1200px;
+
+  background-color: #d3d3d2;
+}
+
+.map__wrap iframe {
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
+  z-index: 3;
 
   border: none;
 }
 
-.map__wrap {
-  position: relative;
-  z-index: 1;
-}
-
 .map__img {
+  position: relative;
+  
+  z-index: 1;
+
   margin-bottom: -5px;
 }
 
@@ -1196,13 +1206,14 @@ fieldset {
   position: absolute;
   top: 138px;
   left: 266px;
+  z-index: 2;
 }
 
 .map__contacts {
   position: absolute;
   right: -27px;
   top: 62px;
-  z-index: 3;
+  z-index: 5;
 
   width: 252px;
   padding: 30px 25px;
@@ -1504,7 +1515,7 @@ fieldset {
   text-align: top;
 }
 
-.choice-ice-cream__checkbox:disabled + .choice-ice-cream__indicator {
+.choice-ice-cream__checkbox input:disabled + .choice-ice-cream__indicator {
   opacity: 0.2;
 }
 

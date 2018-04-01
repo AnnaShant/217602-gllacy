@@ -18,35 +18,44 @@ try {
 }
 
 link.addEventListener("click", function (evt) {
-    evt.preventDefault();
-    overlay.classList.add("feedback-overlay__show");
-    popup.classList.add("feedback__show");
-    name.focus();
+  evt.preventDefault();
+  overlay.classList.add("feedback-overlay__show");
+  popup.classList.add("feedback__show");
+  if (storage) {
+    name.value = storage;
+    email.focus();
+    } else {
+      name.focus();
+  }
 });
 
 close.addEventListener("click", function (evt) {
-    evt.preventDefault();
-    popup.classList.remove("feedback__show");
-    popup.classList.remove("feedback__error");
-    overlay.classList.remove("feedback-overlay__show");
+  evt.preventDefault();
+  popup.classList.remove("feedback__show");
+  popup.classList.remove("feedback__error");
+  overlay.classList.remove("feedback-overlay__show");
 });
 
 feedback.addEventListener("submit", function (evt) {
-    if (!name.value || !email.value || !textarea.value) {
-        evt.preventDefault();
-        popup.classList.remove("feedback__error");
-        popup.offsetWidth = popup.offsetWidth;
-        popup.classList.add("feedback__error");
+  if (!name.value || !email.value || !textarea.value) {
+    evt.preventDefault();
+    popup.classList.remove("feedback__error");
+    popup.offsetWidth = popup.offsetWidth;
+    popup.classList.add("feedback__error");
+    } else {
+      if (isStorageSupport) {
+        localStorage.setItem("name", name.value);
+      }
     }
 });
 
 window.addEventListener("keydown", function (evt) {
-    if (evt.keyCode === 27) {
-        evt.preventDefault ();
-        if (popup.classList.contains("feedback__show")) {
-            popup.classList.remove("feedback__show");
-            popup.classList.remove("feedback__error");
-            overlay.classList.remove("feedback-overlay__show");
-        }
+  if (evt.keyCode === 27) {
+    evt.preventDefault ();
+    if (popup.classList.contains("feedback__show")) {
+      popup.classList.remove("feedback__show");
+      popup.classList.remove("feedback__error");
+      overlay.classList.remove("feedback-overlay__show");
+      }
     }
 });
