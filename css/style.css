@@ -10,6 +10,7 @@ body {
   color: #ffffff;
 
   background-color: #849d8f;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -128,6 +129,7 @@ a {
 }
 
 .gllacy-form {
+  position: relative;
   background-color: #f8f7f4;
 }
 
@@ -135,6 +137,8 @@ a {
 .gllacy-form textarea {
   width: 100%;
 
+  margin: 0;
+  padding: 0;
   padding: 10px 0;
   padding-left: 15px;
 
@@ -191,32 +195,9 @@ a {
   box-shadow: inset 0 0 0 2px rgba(46, 136, 228, 0.5);
 }
 
-input + label,
-textarea + label {
-  position: absolute;
-  top: 11px;
-  left: 14px;
-
-  font-size: 14px;
-  line-height: 24px;
-  color: #999999;
-
-  pointer-events: none;
-}
-
-input:focus + label,
-textarea:focus + label {
-  color: #5b9ddf;
-}
-
-input:focus + label,
-input:required:valid + label,
-textarea:focus + label,
-textarea:required:valid + label {
-  top: -14px;
-
-  font-size: 11px;
-  line-height: 11px;
+.gllacy-form input + label,
+.gllacy-form textarea + label {
+  display: none;
 }
 
 /*Шапка*/
@@ -387,7 +368,7 @@ textarea:required:valid + label {
   box-sizing: border-box;
 
   width: 280px;
-  height: 215px;
+  min-height: 215px;
   padding: 20px 15px;
 
   border-radius: 5px;
@@ -1238,36 +1219,60 @@ fieldset {
 
 .map {
   position: relative;
-
-  height: 429px;
-
-  background-color: #e7e2cd;
-  background-image: url("../img/map.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
 .map__contacts {
+	background-color: #ece5c8;
+	background-image: url("../img/map.jpg");
+	background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.map__contacts__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  
+  min-height: 430px;
+}
+
+.map__contacts iframe {
   position: absolute;
-  left: calc(50% + 271px);
-  top: 62px;
+  z-index: 1;
+  
+  width: 100%;
+  height: 100%;
+  
+	border: 0;
+}
+
+.map__contacts__box {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 
   width: 252px;
+  margin-top: 62px;
   padding: 30px 25px;
   padding-bottom: 40px;
-
+  
   color: #323232;
 
   background-color: #ffffff;
 
   border-radius: 15px;
+
+  z-index: 2;
 }
 
 .map__contacts-items {
   margin: 0;
-  padding: 0;
   margin-bottom: 37px;
+  padding: 0;
 }
 
 .map__contacts-item-text--small {
@@ -1310,7 +1315,7 @@ fieldset {
   padding: 0;
 
   margin-top: 2px;
-  margin-bottom: 25px;
+  margin-bottom: 27px;
 
   font-size: 35px;
   line-height: 41px;
@@ -1521,7 +1526,6 @@ select::-ms-expand {
   margin: 0;
   padding: 0;
 
-  width: 386px;
   padding: 10px 14px;
 
   background-color: rgba(255, 255, 255, 0.2);
@@ -1546,7 +1550,6 @@ select::-ms-expand {
   margin: 0;
   padding: 0;
 
-  width: 670px;
   padding: 10px 16px;
 
   background-color: rgba(255, 255, 255, 0.2);
@@ -1585,7 +1588,7 @@ select::-ms-expand {
   top: 0;
   left: 0;
 
-  width: 22px;
+  width: 23px;
   height: 22px;
 
   background-image: url("../img/svg/radio-off.svg");
@@ -1598,8 +1601,8 @@ select::-ms-expand {
   top: 0;
   left: 0;
 
-  width: 22px;
-  height: 22px;
+  width: 23px;
+  height: 20px;
   
   background-image: url("../img/svg/radio-on.svg");
 }
@@ -1633,7 +1636,8 @@ select::-ms-expand {
   -ms-grid-row-align: center;
   align-self: center;
 
-  margin-top: 18px;
+  margin-top: 16px;
+  margin-left: 3px;
   padding: 7px 28px;
 
   color: #ffffff;
@@ -1803,18 +1807,16 @@ select::-ms-expand {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 
-  width: 340px;
+  width: 310px;
   margin: 0;
-  margin-top: 10px;
+  margin-top: 17px;
+  margin-left: 10px;
   margin-right: auto;
   padding: 0;
 
@@ -1826,11 +1828,32 @@ select::-ms-expand {
 .footer__info-item {
   position: relative;
 
-  width: 162px;
+  -ms-flex-preferred-size: 45%;
+
+      flex-basis: 45%;
+}
+
+.footer__info-item:nth-child(2n) {
+  -ms-flex-preferred-size: 55%;
+      flex-basis: 55%;
 }
 
 .footer__info-link--suppliers {
+  position: relative;
+
   font-weight: 700;
+}
+
+.footer__info-link--suppliers::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -25px;
+  width: 15px;
+  height: 13px;
+  background-image: url("../img/svg/heart.svg");
+  background-repeat: no-repeat;
+  background-position: 0 50%;
 }
 
 .footer__info-link:hover,
@@ -1839,17 +1862,6 @@ select::-ms-expand {
   color: #ffbc9e;
 
   border-bottom: 1px solid rgba(255, 188, 158, 0.3);
-}
-
-.footer__info-link--document,
-.footer__info-link--ecology {
-  margin-left: -20px;
-}
-
-.footer__info-item svg {
-  position: absolute;
-  top: 5px;
-  left: -23px;
 }
 
 .footer__academy {
