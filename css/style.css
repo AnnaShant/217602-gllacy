@@ -218,6 +218,10 @@ input[type="radio"].visually-hidden {
   margin: 14px 0;
 }
 
+.header__elements-catalog {
+  padding-top: 2px;
+}
+
 .entrance__link,
 .basket__text {
   font-size: 14px;
@@ -628,7 +632,11 @@ fieldset {
   padding: 0;
   margin: 19px 0;
   margin-top: 18px;
-  margin-left: 10px;
+  margin-left: 8px;
+}
+
+.main-nav__items-catalog {
+  margin-top: 21px;
 }
 
 .main-nav__item span {
@@ -663,7 +671,7 @@ fieldset {
 }
 
 .main-nav__link-catalog {
-  padding: 7px 15px;
+  padding: 7px 13px;
 
   background-color: #d07058;
 
@@ -758,7 +766,7 @@ fieldset {
 .main-box__contacts {
   position: absolute;
   top: -10px;
-  left: 979px;
+  left: 976px;
 
   width: 170px;
 
@@ -778,6 +786,10 @@ fieldset {
 .main-box__contacts-tel {
   font-size: 22px;
   line-height: 30px;
+}
+
+.main-box__contacts--catalog {
+  top: -22px;
 }
 
 /*Слайдер*/
@@ -1036,6 +1048,8 @@ fieldset {
 
   text-decoration: none;
   color: #ffffff;
+  text-align: center;
+  
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -1064,10 +1078,11 @@ fieldset {
 
 .advantage__text {
   margin: 0;
-  padding-top: 25px;
+  padding-top: 26px;
 
   font-size: 24px;
   line-height: 30px;
+  font-weight: 400;
 }
 
 .advantage__items {
@@ -1258,7 +1273,7 @@ fieldset {
 
 .map__contacts__box {
   -ms-flex-item-align: end;
-      align-self: flex-end;
+  align-self: flex-end;
 
   width: 252px;
   margin-top: 62px;
@@ -1328,7 +1343,7 @@ fieldset {
 
 .breadcrumbs {
   width: 220px;
-  margin-top: 15px;
+  margin-top: 16px;
 }
 
 .breadcrumbs__items {
@@ -1429,7 +1444,7 @@ fieldset {
 
 .choice-ice-cream__sorting select {
   width: 193px;
-  padding: 10px 14px;
+  padding: 9px 14px;
 
   color: #ffffff;
 
@@ -1537,7 +1552,8 @@ select::-ms-expand {
   margin: 0;
   padding: 0;
 
-  padding: 10px 14px;
+  padding: 9px 14px;
+  padding-right: 20px;
 
   background-color: rgba(255, 255, 255, 0.2);
 
@@ -1549,7 +1565,7 @@ select::-ms-expand {
 }
 
 .choice-ice-cream__fillers {
-  margin-top: 5px;
+  margin-top: 8px;
 }
 
 .choice-ice-cream__fillers label {
@@ -1561,7 +1577,8 @@ select::-ms-expand {
   margin: 0;
   padding: 0;
 
-  padding: 10px 16px;
+  padding: 9px 16px;
+  padding-right: 20px;
 
   background-color: rgba(255, 255, 255, 0.2);
 
@@ -1647,7 +1664,7 @@ select::-ms-expand {
   -ms-grid-row-align: center;
   align-self: center;
 
-  margin-top: 16px;
+  margin-top: 18px;
   margin-left: 3px;
   padding: 7px 28px;
 
@@ -1707,6 +1724,10 @@ select::-ms-expand {
   margin: 0;
 }
 
+.catalog-pagination__item-number {
+  margin-right: 3px;
+}
+
 .catalog-pagination__item-arrows {
   width: 10px;
   height: 20px;
@@ -1719,7 +1740,7 @@ select::-ms-expand {
 }
 
 .catalog-pagination__item-arrows--prev {
-  margin-right: 15px;
+  margin-right: 12px;
 
   -webkit-transform: rotate(180deg);
 
@@ -1730,7 +1751,7 @@ select::-ms-expand {
 }
 
 .catalog-pagination__item-arrows--next {
-  margin-left: 18px;
+  margin-left: 7px;
 }
 
 .catalog-pagination__link {
